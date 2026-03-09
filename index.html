@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RV Store</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0e1a2b;
+color:white;
+}
+
+header{
+background:#0a4cff;
+padding:15px;
+text-align:center;
+font-size:26px;
+font-weight:bold;
+}
+
+.container{
+padding:20px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.product{
+background:#1d2f4a;
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+.product img{
+width:100%;
+border-radius:8px;
+}
+
+button{
+margin-top:10px;
+padding:10px;
+width:100%;
+border:none;
+background:#0a4cff;
+color:white;
+border-radius:6px;
+font-size:16px;
+}
+
+.cart{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#0a4cff;
+padding:15px;
+border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>RV STORE</header>
+
+<div class="container">
+
+<h2>Produtos</h2>
+
+<div class="products">
+
+<div class="product">
+<img src="https://via.placeholder.com/200">
+<h3>Produto Digital</h3>
+<p>R$ 20</p>
+<button onclick="addCart('Produto Digital',20)">Comprar</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/200">
+<h3>Conta Premium</h3>
+<p>R$ 15</p>
+<button onclick="addCart('Conta Premium',15)">Comprar</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/200">
+<h3>Assinatura</h3>
+<p>R$ 10</p>
+<button onclick="addCart('Assinatura',10)">Comprar</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="cart">
+🛒 Carrinho: R$ <span id="total">0</span>
+<br>
+<button onclick="checkout()">Pagar</button>
+</div>
+
+<script>
+
+let total = 0
+
+function addCart(nome,preco){
+
+total += preco
+
+document.getElementById("total").innerText = total
+
+alert(nome + " adicionado ao carrinho")
+
+}
+
+function checkout(){
+
+if(total == 0){
+
+alert("Carrinho vazio")
+
+return
+
+}
+
+alert("Pagamento via PIX em desenvolvimento")
+
+}
+
+</script>
+
+</body>
+</html>
